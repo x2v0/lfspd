@@ -10,7 +10,7 @@ The main features of the distro:
    
   Distro does not contain X11, GUIs, mans, locales, tests, tutorials etc.
   
-  It doesn't require any OS. This is "fake" Linux, imitates Linux distribution.
+  It doesn't require any OS. This is "fake" Linux, aka rootfs, imitates Linux distribution.
 - all packages built from sources
 - minimized by size (compiled with size optimization flags + stripped & cleaned) 
 - set of packages for scientific programming <b>[Readme/packages.md](Readme/packages.md)</b>
