@@ -1,0 +1,24 @@
+# The libtiff package contains the TIFF libraries and associated utilities.
+# The libraries are used by many programs for reading and writing TIFF files
+# and the utilities are used for general work with TIFF files.
+
+
+PKG="libtiff"
+PKG_VERSION="4.5"
+PKG_BUILD="1"
+PKG_FULL="tiff-${PKG_VERSION}.${PKG_BUILD}"
+PKG_FILE="${PKG_FULL}.tar.gz"
+URL="https://download.osgeo.org/${PKG}/${PKG_FILE}"
+MD5="d08c5f9eee6350fffc239e5993d92779"
+
+( cat << "xEOFx"
+
+mmkdir -p libtiff-build &&
+cd        libtiff-build &&
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local -G Ninja ..
+ninja
+ninja install
+
+xEOFx
+) > ${PKG}.sh

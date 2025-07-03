@@ -1,0 +1,8 @@
+111,113c111,113
+< dd4hep_add_plugin(DDCoreGraphics
+<   SOURCES src/graphics/*.cpp
+<   USES DDCore ROOT::Core ROOT::Rint ROOT::Gui ROOT::Hist ROOT::HistPainter ROOT::ROOTHistDraw)
+---
+> #dd4hep_add_plugin(DDCoreGraphics
+> #  SOURCES src/graphics/*.cpp
+> #  USES DDCore ROOT::Core ROOT::Rint ROOT::Gui ROOT::Hist ROOT::HistPainter ROOT::ROOTHistDraw)

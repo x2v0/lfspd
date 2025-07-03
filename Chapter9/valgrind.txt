@@ -1,0 +1,24 @@
+# This library provides an iconv() implementation,
+# for use on systems which don't have one,
+# or whose implementation cannot convert from/to Unicode.
+
+
+PKG="valgrind"
+PKG_VERSION="3.21"
+PKG_BUILD="0"
+PKG_FULL="${PKG}-${PKG_VERSION}.${PKG_BUILD}"
+PKG_FILE="${PKG_FULL}.tar.bz2"
+URL="https://sourceware.org/pub/${PKG}/${PKG_FILE}"
+MD5="b8b89b327732c12191306c3d31cfd4b1"
+
+( cat << "xEOFx"
+
+sed -i 's|/doc/valgrind||' docs/Makefile.in &&
+
+./configure --prefix=/usr/local \
+            --datadir=/usr/local/share/doc/${PKG_FULL}
+make
+make install
+
+xEOFx
+) > ${PKG}.sh

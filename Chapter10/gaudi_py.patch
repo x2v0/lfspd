@@ -1,0 +1,10 @@
+11c11
+< import ctypes
+---
+> #import ctypes
+83,84c83,84
+< class c_opt_t(ctypes.Structure):
+<     _fields_ = [("key", ctypes.c_char_p), ("value", ctypes.c_char_p)]
+---
+> #class c_opt_t(ctypes.Structure):
+> #    _fields_ = [("key", ctypes.c_char_p), ("value", ctypes.c_char_p)]

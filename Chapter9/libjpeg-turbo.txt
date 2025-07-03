@@ -1,0 +1,27 @@
+# The Which program
+
+
+PKG="libjpeg-turbo"
+PKG_VERSION="3.0"
+PKG_BUILD="0"
+PKG_FULL=${PKG}-${PKG_VERSION}.${PKG_BUILD}
+PKG_FILE="${PKG_FULL}.tar.gz"
+URL="https://downloads.sourceforge.net/${PKG}/${PKG_FILE}"
+MD5="aa1f0a1c72cb6772e34d9d5136267f56"
+
+( cat << "xEOFx"
+
+mkdir build &&
+cd    build &&
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_BUILD_TYPE=RELEASE        \
+      -DENABLE_STATIC=FALSE             \
+      -DCMAKE_INSTALL_DOCDIR=/usr/local/share/doc/${PKG_FULL} \
+      -DCMAKE_INSTALL_DEFAULT_LIBDIR=lib  \
+      ..
+make
+make install
+
+xEOFx
+) > ${PKG}.sh

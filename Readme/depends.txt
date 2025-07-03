@@ -1,0 +1,115 @@
+aida
+berkeley
+binutils
+boost
+bzip2
+certificates-ca
+diffutils
+elfutils
+expat
+findutils
+g4abla
+g4emlow
+g4ensdfstate
+g4incl
+g4ndl
+g4particlexs
+g4photonevaporation
+g4pii
+g4radioactivedecay
+g4realsurface
+g4saiddata
+gdbm
+geant4
+gettext
+glproto
+gmake
+gperf
+gsl
+heppdt
+hwloc
+libbsd
+libedit
+libffi
+libiconv
+libidn2
+libmd
+libmicrohttpd
+libpciaccess
+libpthread
+libsigsegv
+libsm
+libtool
+libunistring
+libunwind
+libxml2
+libyaml
+lz4
+lzo
+m4
+nasm
+ncurses
+nghttp2
+pandorapfa
+pcre
+pcre2
+pigz
+pkgconf
+popt
+randrproto
+re2c
+readline
+rngstreams
+sqlite
+tar
+unuran
+unzip
+util
+xxhash
+xz
+zlib
+zstd
+------------------------------------
+	'acts',
+    'boost',
+    'catch2',
+    'clhep',
+    'cmake',
+    'cppgsl',
+    'dd4hep',
+    'delphes',
+    'eigen',
+    'evtgen',
+    'fastjet',
+    'gaudi',
+    'gdb',
+    'geant4',
+    'hepmc',
+    'hepmc3',
+    'heppdt',
+    'intel-tbb',
+    'libyaml',
+    'marlin',
+    'ninja',
+    'nlohmann-json',
+    'py-awkward',
+    'py-cython',
+    'py-jinja2',
+    'py-markupsafe',
+    'py-pip',
+    'py-pyyaml',
+    'py-setuptools',
+    'py-six',
+    'pythia8',
+    'python',
+    'py-wheel',
+    'range-v3',
+    'root',
+    'rsync',
+    'simsipm',
+    'util-linux-uuid',
+    'veccore',
+    'vecgeom',
+    'vdt',
+    'xerces-c',
+    'zlib',

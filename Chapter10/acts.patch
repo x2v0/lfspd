@@ -1,0 +1,11 @@
+--- Core/include/Acts/Utilities/VectorHelpers.hpp.sav	2024-03-01 15:26:20.523639808 +0000
++++ Core/include/Acts/Utilities/VectorHelpers.hpp	2024-03-01 15:27:09.123639808 +0000
+@@ -13,7 +13,7 @@
+ #include "Acts/Definitions/TrackParametrization.hpp"
+ #include "Acts/Utilities/BinningType.hpp"
+ #include "Acts/Utilities/TypeTraits.hpp"
+-
++#include <cassert>
+ #include <array>
+ #include <limits>
+ 

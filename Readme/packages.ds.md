@@ -1,0 +1,162 @@
+## Software Packages
+
+### Core Tools and Libraries
+- **KFParticle**: Package for reconstruction and selection of short-lived particles using the Kalman filter.
+- **k4FWCore**: Gaudi-adapted Basic I/O components, including ROOT I/O.
+- **k4Gen**: Gaudi-adapted Generators (Pythia8) and Particle Guns.
+- **k4SimGeant4**: Gaudi-adapted Geant4 Full Simulation.
+- **FCCDetectors**: Gaudi-adapted DD4hep models of FCC detector geometries for Full Simulation.
+- **k4ActsTracking**: Gaudi-adapted Acts Common Tracking Software.
+- **Acts**: Common Tracking Software.
+- **Gaudi**: Framework for HEP experiment frameworks.
+- **GeoModel**: Detector Description Toolkit for HEP experiments.
+- **DD4hep**: Detector Description Toolkit for High Energy Physics.
+- **EDM4hep**: Generic event data model for future HEP collider experiments.
+- **HepMC**: Older version of HepMC3.
+- **HepMC3**: C++ event record for High Energy Physics Monte Carlo generators and simulation.
+- **HepPDT**: Contains translation methods for particle IDs and the PDG standard.
+- **Jinja2**: Python module implementing a simple template language.
+- **MarkupSafe**: Python module for XML/HTML/XHTML Markup-safe strings.
+- **OpenBLAS**: Optimized BLAS library for Linear Algebra.
+- **XML-Parser**: Perl extension interface to James Clark's XML parser, expat.
+- **abseil**: Google C++ library code augmenting the C++ standard library.
+- **acl**: Commands for Manipulating POSIX Access Control Lists.
+- **attr**: Commands for Manipulating Filesystem Extended Attributes.
+- **autoconf**: Package of M4 macros for generating shell scripts to configure software.
+- **automake**: Tool for automatically generating `Makefile.in` files.
+- **bash**: The Bourne Again SHell.
+- **bc**: POSIX bc calculator with GNU extensions.
+- **berkeley_db**: Embedded key-value database libraries for scalable data management.
+- **binutils**: Collection of binary tools.
+- **bison**: General-purpose parser generator for deterministic LR grammars.
+- **boost**: C++ libraries for linear algebra, multithreading, and more.
+- **brotli**: General-purpose lossless compression algorithm.
+- **bzip**: Older version of bzip2.
+- **bzip2**: File compression program using the Burrows–Wheeler algorithm.
+- **catch2**: Unit testing framework for C++.
+- **check**: Unit testing framework for C.
+- **clhep**: HEP-specific foundation and utility classes (e.g., random generators, physics vectors).
+- **cmake**: Modern toolset for generating Makefiles.
+- **coreutils**: Basic file, shell, and text manipulation utilities.
+- **cppgsl**: Guideline Support Library (GSL) for C++ Core Guidelines.
+- **curl**: Utility and library for transferring files with URL syntax.
+- **dejagnu**: Framework for testing other programs.
+- **diffutils**: Programs for finding differences between files.
+- **dpkg**: Tool for managing Debian packages.
+- **eigen**: C++ template library for linear algebra.
+- **expat**: Stream-oriented XML parser library.
+- **expect**: Tool for automating interactive applications.
+- **fftw**: Fast C FFT library for real-complex and multidimensional transforms.
+- **file**: Command-line tool for identifying file types.
+- **findutils**: Directory searching utilities.
+- **flex**: Fast lexical analyzer generator.
+- **flit_core**: PEP 517 build backend for Python packages.
+- **gaudi**: Interfaces and services for HEP experiment frameworks.
+- **gawk**: Tool for simple data-reformatting jobs.
+- **gcc**: GNU Compiler Collection (C, C++, Fortran, etc.).
+- **gdb**: Portable debugger for Unix-like systems.
+- **gdbm**: Library of database functions using extensible hashing.
+- **geant**: Toolkit for simulating particle passage through matter.
+- **gettext**: GNU Translation Project.
+- **git**: Distributed version control system.
+- **glib**: Library for threads and related facilities.
+- **glibc**: GNU C Library for core system functions.
+- **gmp**: Library for arbitrary precision arithmetic.
+- **googletest**: Google's C++ testing and mocking framework.
+- **gperf**: Perfect hash function generator.
+- **gperftools**: CPU profiler from Google.
+- **grep**: Tool for searching files for patterns.
+- **gsl**: GNU Scientific Library for numerical computations.
+- **gzip**: Data compression program.
+- **hdf5**: High-performance data management and storage suite.
+- **help2man**: Tool for generating manual pages from program output.
+- **hwloc**: Library for gathering information about parallel computing platforms.
+- **iana-etc**: Provides `/etc/services` and `/etc/protocols` files.
+- **inetutils**: Collection of common network programs.
+- **intltool**: Tools for translating file formats using GNU gettext.
+- **iproute2**: Utilities for controlling TCP/IP networking and traffic control.
+- **jemalloc**: General-purpose malloc implementation for fragmentation avoidance.
+- **kbd**: Utilities for managing Linux console and keyboard.
+- **krb5**: Kerberos Network Authentication Service (V5).
+- **lcms**: Color management engine.
+- **less**: Open-source file pager.
+- **libarchive**: Multi-format archive and compression library.
+- **libbsd**: Library providing BSD system functions.
+- **libcap**: Functions for managing capability states.
+- **libedit**: Port of the NetBSD Editline library.
+- **libelf**: ELF object file access library.
+- **libffi**: Library for interfacing with high-level languages.
+- **libfmt**: Modern formatting library.
+- **libiconv**: Library for supporting multiple character encodings.
+- **libidn2**: Library for encoding and decoding internationalized domain names.
+- **libmd**: Library providing BSD message digest functions.
+- **libmng**: Library for reading and writing MNG files.
+- **libpipeline**: Library for manipulating pipelines of subprocesses.
+- **libpng**: Library supporting PNG image format features.
+- **libpsl**: Library for accessing the Public Suffix List (PSL).
+- **libsigsegv**: Library for handling page faults in user mode.
+- **libstc**: (No description provided.)
+- **libtasn1**: Library used by GnuTLS and p11-kit.
+- **libtool**: Tool for building libraries.
+- **libunistring**: Library for non-trivial text processing.
+- **libunwind**: Library for manipulating call-frames and resuming execution.
+- **libyaml**: YAML parser and emitter library.
+- **libxcrypt**: Library for one-way hashing of passwords.
+- **libxml2**: XML toolkit implemented in C.
+- **libxslt**: XSLT processor based on libxml2.
+- **linux**: Linux kernel (6.4.12).
+- **lz4**: Extremely fast compression algorithm.
+- **lzo**: Lempel-Ziv-Oberhumer (LZO) compression algorithm.
+- **m4**: Traditional Unix macro processor.
+- **make-ca**: Package for managing CA certificates.
+- **make**: Tool for controlling the generation of executables.
+- **mc**: Midnight Commander, a visual file manager.
+- **meson**: Build system for C and C++.
+- **micro**: Terminal-based text editor.
+- **mpc**: C library for arithmetic of complex numbers.
+- **mpfr**: C library for multiple-precision floating-point computations.
+- **nasm**: Assembler for the x86 CPU architecture.
+- **ncurses**: Library for text-based user interfaces.
+- **ninja**: Build system focused on speed.
+- **nlohmann-json**: JSON for Modern C++.
+- **openssh**: Tool for remote login with the SSH protocol.
+- **openssl**: Library for secure communications.
+- **p11-kit**: Library for loading and enumerating PKCS#11 modules.
+- **patch**: Tool for applying diff files.
+- **pcre**: Perl Compatible Regular Expressions.
+- **pcre2**: Updated version of PCRE.
+- **perl**: Highly capable programming language.
+- **pkgconf**: Tool for configuring compiler and linker flags.
+- **podio**: Library for creating event data models (EDMs) for HEP experiments.
+- **popt**: Library for parsing command-line options.
+- **procps-ng**: Utilities for process management (e.g., `ps`, `top`).
+- **psmisc**: Utilities for managing processes.
+- **py-packages**: Collection of Python packages.
+- **python**: High-level, interpreted programming language.
+- **range-v3**: Library for working with ranges in C++.
+- **re2**: Thread-friendly regular expression engine.
+- **re2c**: Lexer generator for C/C++.
+- **readline**: Library for command-line editing.
+- **rngstreams**: Uniform random number generator with multiple streams.
+- **root**: Object-oriented program and library developed by CERN.
+- **rsync**: Utility for file synchronization.
+- **sed**: Non-interactive command-line text editor.
+- **slang**: Computing language required by Midnight Commander.
+- **sqlite**: Small, fast SQL database engine.
+- **sudo**: Tool for running programs with elevated privileges.
+- **tar**: Tool for creating and manipulating tar archives.
+- **tbb**: Threading Building Blocks.
+- **tcl**: Interpreted programming language.
+- **texinfo**: Official documentation format of the GNU project.
+- **unuran**: Universal Non-Uniform Random Number generator.
+- **util-linux**: Collection of Linux utilities.
+- **vdt**: Mathematical library used in LHC.
+- **veccore**: Abstraction layer for vectorization libraries.
+- **vim**: Text editor.
+- **wget**: Tool for retrieving content from web servers.
+- **wheel**: Python wheel packaging standard.
+- **xerces-c**: XML parser.
+- **xxhash**: Extremely fast hash algorithm.
+- **xz**: C99 implementation of the `.xz` file format.
+- **zlib**: Library for data compression.
+- **zstd**: Lossless data compression algorithm.

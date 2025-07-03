@@ -1,0 +1,149 @@
+11c11
+< SET_PROPERTY(DIRECTORY . PROPERTY PACKAGE_NAME UtilityApps)
+---
+> SET_PROPERTY(DIRECTORY . PROPERTY PACKAGE_NAME DDEve)
+13,41c13,23
+< add_executable(geoDisplay src/display.cpp)
+< target_link_libraries(geoDisplay DD4hep::DDCore)
+< #-----------------------------------------------------------------------------------
+< add_executable(geoConverter src/converter.cpp)
+< target_link_libraries(geoConverter DD4hep::DDCore)
+< #-----------------------------------------------------------------------------------
+< add_executable(geoPluginRun src/plugin_runner.cpp)
+< target_link_libraries(geoPluginRun DD4hep::DDCore)
+< #-----------------------------------------------------------------------------------
+< add_executable(dumpBfield src/dumpBfield.cpp)
+< target_link_libraries(dumpBfield DD4hep::DDCore)
+< #-----------------------------------------------------------------------------------
+< add_executable(print_materials src/print_materials.cpp)
+< target_link_libraries(print_materials DD4hep::DDCore DD4hep::DDRec)
+< #-----------------------------------------------------------------------------------
+< add_executable(materialScan src/materialScan.cpp)
+< target_link_libraries(materialScan DD4hep::DDRec ROOT::Core ROOT::Geom)
+< #-----------------------------------------------------------------------------------
+< add_executable(materialBudget  src/materialBudget.cpp)
+< target_link_libraries(materialBudget DD4hep::DDRec ROOT::Core ROOT::Geom ROOT::Hist)
+< #-----------------------------------------------------------------------------------
+< add_executable(graphicalScan src/graphicalScan.cpp)
+< target_link_libraries(graphicalScan  DD4hep::DDRec ROOT::Core ROOT::Geom ROOT::Hist)
+< #-----------------------------------------------------------------------------------
+< 
+< if(TARGET Geant4::Interface)
+<   add_executable(dumpdetector src/dumpdetector.cpp)
+<   target_link_libraries(dumpdetector DD4hep::DDCore DD4hep::DDRec Geant4::Interface)
+<   LIST(APPEND OPTIONAL_EXECUTABLES dumpdetector)
+---
+> add_library(DDEve_Interface INTERFACE)
+> add_library(DD4hep::DDEve_Interface ALIAS DDEve_Interface)
+> target_include_directories(DDEve_Interface
+>   INTERFACE
+>   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+>   $<INSTALL_INTERFACE:include>
+> )
+> 
+> #target_link_libraries(DDEve_Interface INTERFACE ROOT::Core ROOT::Rint ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL ROOT::EG)
+> if(ROOT_VERSION VERSION_GREATER_EQUAL 6.27.00)
+>   target_link_libraries(DDEve_Interface INTERFACE ROOT::ROOTGeomViewer)
+44c26,36
+< # the web display tool depends on the ROOT7 version of DDEve
+---
+> 
+> dd4hep_add_dictionary(G__DDEve
+>   SOURCES ../DDCore/include/ROOT/Warnings.h include/DDEve/*.h
+>   EXCLUDE include/DDEve/Utilities.h
+>   include/DDEve/ParticleActors.h
+>   include/DDEve/HitActors.h
+>   include/DDEve/Factories.h
+>   LINKDEF ../DDCore/include/ROOT/LinkDef.h
+>   USES DD4hep::DDCore
+>   )
+> 
+46,48c38,40
+<   add_executable(geoWebDisplay src/webdisplay.cpp)
+<   target_link_libraries(geoWebDisplay DD4hep::DDCore)
+<   LIST(APPEND OPTIONAL_EXECUTABLES geoWebDisplay)
+---
+>   dd4hep_print("Building the web display using ROOT7")
+>   SET(DDEVE_ROOT7_SOURCES root7/WebDisplay.cpp)
+>   SET(DDEVE_ROOT7_LINK ROOT::ROOTEve)
+51,63c43,45
+< # #-----------------------------------------------------------------------------------
+< if(BUILD_TESTING)
+<   if(DD4HEP_USE_LCIO)
+<     add_executable(test_surfaces src/test_surfaces.cpp)
+<     target_link_libraries(test_surfaces DD4hep::DDRec DD4hep::DDTest LCIO::lcio)
+< 
+<     add_executable(test_cellid_position_converter src/test_cellid_position_converter.cpp)
+<     target_link_libraries(test_cellid_position_converter DD4hep::DDRec DD4hep::DDTest LCIO::lcio)
+< 
+<     LIST(APPEND OPTIONAL_EXECUTABLES test_surfaces)
+<     LIST(APPEND OPTIONAL_EXECUTABLES test_cellid_position_converter)
+<   endif()
+<   #-----------------------------------------------------------------------------------
+---
+> if(TARGET LCIO::lcio)
+>   SET(DDEVE_LCIO_SOURCES lcio/LCIOEventHandler.cpp)
+>   SET(DDEVE_LCIO_LINK LCIO::lcio)
+65,68c47,50
+< dd4hep_add_dictionary( G__eve
+<   SOURCES src/EvNavHandler.h
+<   LINKDEF src/LinkDef.h
+<   USES    DD4hep::DDCore ROOT::Geom
+---
+> 
+> dd4hep_add_plugin(DDEvePlugins SOURCES src/*.cpp ${DDEVE_LCIO_SOURCES} ${DDEVE_ROOT7_SOURCES}
+>   GENERATED G__DDEve.cxx
+>   USES      DD4hep::DDCore DD4hep::DDEve_Interface ${DDEVE_LCIO_LINK} ${DDEVE_ROOT7_LINK}
+71,76c53,64
+< # #-----------------------------------------------------------------------------------
+< if (DD4HEP_USE_LCIO)
+<   dd4hep_add_dictionary( G__eve1
+<     SOURCES src/EvNavHandler.h
+<     LINKDEF src/LinkDef.h
+<     USES    DD4hep::DDCore ROOT::Geom
+---
+> if(DD4HEP_USE_GEANT4)
+>   dd4hep_add_dictionary(G__DDG4IO
+>     SOURCES ../DDCore/include/ROOT/Warnings.h DDEve/DDG4IO.C
+>     LINKDEF ../DDCore/include/ROOT/LinkDef.h
+>     USES    DD4hep::DDG4 
+>     )
+>   add_library(DDG4IO DDEve/IO.cpp G__DDG4IO.cxx)
+>   target_link_libraries(DDG4IO DD4hep::DDG4 DD4hep::DDEve_Interface)
+>   set_target_properties(DDG4IO PROPERTIES VERSION ${DD4hep_VERSION} SOVERSION ${DD4hep_SOVERSION})
+>   install(TARGETS DDG4IO EXPORT DD4hep
+>     LIBRARY DESTINATION lib
+>     ARCHIVE DESTINATION lib
+78,80d65
+<   add_executable(teveLCIO G__eve1.cxx src/teve_display.cpp src/next_event_lcio.cpp)
+<   target_link_libraries(teveLCIO DD4hep::DDRec LCIO::lcio ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL)
+<   LIST(APPEND OPTIONAL_EXECUTABLES teveLCIO)
+83,97c68,79
+< # #-----------------------------------------------------------------------------------
+< add_executable(teveDisplay src/teve_display.cpp src/next_event_dummy.cpp G__eve.cxx)
+< target_link_libraries(teveDisplay DD4hep::DDRec ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL )
+< 
+< INSTALL(TARGETS geoDisplay
+<   geoConverter
+<   geoPluginRun
+<   dumpBfield
+<   print_materials
+<   materialScan
+<   materialBudget
+<   graphicalScan
+<   teveDisplay
+<   ${OPTIONAL_EXECUTABLES}
+<   EXPORT DD4hep
+---
+> add_executable(ddeve DDEve/DDEve.cpp)
+> target_link_libraries(ddeve DDEve_Interface)
+> 
+> 
+> set_target_properties(DDEvePlugins PROPERTIES VERSION ${DD4hep_VERSION} SOVERSION ${DD4hep_SOVERSION})
+> 
+> 
+> install(DIRECTORY DDEve DESTINATION examples )
+> install(DIRECTORY include/DDEve DESTINATION include)
+> install(TARGETS ddeve DDEvePlugins DDEve_Interface EXPORT DD4hep
+>   ARCHIVE DESTINATION lib
+>   LIBRARY DESTINATION lib

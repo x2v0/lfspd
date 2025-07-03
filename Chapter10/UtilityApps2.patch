@@ -1,0 +1,8 @@
+87c87
+< INSTALL(TARGETS geoDisplay
+---
+> INSTALL(TARGETS #geoDisplay
+95c95
+<   teveDisplay
+---
+> #  teveDisplay

@@ -1,0 +1,22 @@
+# zstd is a fast lossless compression algorithm, targeting real-time compression scenarios
+#  at zlib-level and better compression ratios. It's backed by a very fast entropy stage,
+# provided by Huff0 and FSE library.
+
+PKG="zstd"
+PKG_VERSION="1.95"
+PKG_BUILD="5"
+#PKG_FULL="${PKG}-${PKG_VERSION}.${PKG_BUILD}"
+#PKG_FILE="${PKG_FULL}.tar.gz"
+URL="https://github.com/facebook/${PKG}"
+#MD5=""
+
+( cat << "xEOFx"
+
+git clone ${URL} &&
+cd ${PKG} &&
+      
+make
+make install
+
+xEOFx
+) > ${PKG}.sh

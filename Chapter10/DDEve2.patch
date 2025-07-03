@@ -1,0 +1,11 @@
+66,67c66,67
+< add_executable(teveDisplay src/teve_display.cpp src/next_event_dummy.cpp G__eve.cxx)
+< target_link_libraries(teveDisplay DD4hep::DDRec ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL )
+---
+> #add_executable(teveDisplay src/teve_display.cpp src/next_event_dummy.cpp G__eve.cxx)
+> #target_link_libraries(teveDisplay DD4hep::DDRec ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL )
+81c81
+<   )
+\ No newline at end of file
+---
+>   )

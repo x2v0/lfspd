@@ -1,0 +1,6 @@
+84,85c84,85
+< add_executable(teveDisplay src/teve_display.cpp src/next_event_dummy.cpp G__eve.cxx)
+< target_link_libraries(teveDisplay DD4hep::DDRec ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL )
+---
+> #add_executable(teveDisplay src/teve_display.cpp src/next_event_dummy.cpp G__eve.cxx)
+> #target_link_libraries(teveDisplay DD4hep::DDRec ROOT::Core ROOT::Eve ROOT::Gui ROOT::Graf3d ROOT::RGL )

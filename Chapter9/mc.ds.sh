@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status
+set -e
+# Treat unset variables as an error when substituting
+set -u
+# Ensure that a pipeline returns the exit status of the last command to exit with a non-zero status
+set -o pipefail
+
+# Check for necessary tools
+for cmd in make gcc; do
+    if ! command -v $cmd &> /dev/null; then
+        echo "Error: $cmd is not installed."
+        exit 1
+    fi
+done
+
+# Configure the build
+echo "Configuring the build..."
+./configure --prefix=/usr/local \
+            --sysconfdir=/etc   \
+            --with-pcre=/usr/lib \
+            --with-pcre2=/usr/lib \
+            --disable-nls \
+            --enable-vfs-cpio=no \
+            --enable-vfs-fish=no \
+            --enable-vfs-ftp=no \
+            --enable-vfs-sftp=no \
+            --disable-doxygen-doc \
+            --enable-vfs-tar=no \
+            --enable-charset=no \
+            --enable-tests=no
+
+# Build the project
+echo "Building the project..."
+make
+
+# Install the project
+echo "Installing the project..."
+make install
+
+# Create a symbolic link
+echo "Creating symbolic link..."
+ln -sf /usr/local/bin/mcedit /usr/local/bin/mce
+
+echo "Installation and setup completed successfully."
