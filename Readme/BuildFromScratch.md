@@ -16,7 +16,7 @@
 <code>apt install wget git python3 binutils bison gawk gcc m4 make patch build-essential -y</code>
 
 #### clone lfspd
-<code>git clone https://git.jinr.ru/x2v0/lfspd</code>
+<code>git clone https://github.com/x2v0/lfspd</code>
 
 ### go to lfspd directory
 <code>cd lfspd</code>
