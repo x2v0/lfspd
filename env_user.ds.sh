@@ -8,6 +8,8 @@ EOF
 
 # Create ~/.bashrc
 cat > ~/.bashrc << "EOF"
+#!/bin/bash
+
 set +h
 umask 022
 LFS=/mnt/LFS
