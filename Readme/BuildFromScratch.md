@@ -25,7 +25,7 @@
 <code>./create_user.sh</code>
 
 #### Set an enviroment
-<code>sudo ./env_user.sh</code>
+<code>./env_user.sh</code>
 
 #### Build the distribution
 <code>./start.sh</code>
